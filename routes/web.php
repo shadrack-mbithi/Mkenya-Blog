@@ -19,9 +19,8 @@ Route::get('/', function () {
 });
 
 
-Route::get('/index',function(){
-    return('I have just began Laravel programming...Lovely!');
-});
+// Route::get('/index',function(){
+//     return('I have just began Laravel programming...Lovely!');
 // The route we have created to show all blog posts.
 Route::get('/blog', [\App\Http\Controllers\BlogPostController::class, 'index']);
 Route::get('/blog/{blogPost}', [BlogPostController::class, 'show'])->name('blog.show');
