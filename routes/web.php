@@ -18,14 +18,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
-// Route::get('/index',function(){
-//     return('I have just began Laravel programming...Lovely!');
 // The route we have created to show all blog posts.
 Route::get('/blog', [\App\Http\Controllers\BlogPostController::class, 'index']);
 Route::get('/blog/{blogPost}', [BlogPostController::class, 'show'])->name('blog.show');
-//Other routes to create post and submit post to the database
-
 Route::get('/blog/create/post' , [\App\Http\Controllers\BlogPostController::class, 'create']); //shows create post form
 Route::post('/blog/create/post' , [\App\Http\Controllers\BlogPostController::class, 'store']); //saves the created post to the databse
 Route::get('/blog/{blogPost}/edit', [\App\Http\Controllers\BlogPostController::class, 'edit']); //shows edit post form
